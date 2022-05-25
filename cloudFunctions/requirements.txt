@@ -1,0 +1,5 @@
+# Function dependencies, for example:
+numpy
+opencv-python
+pillow
+flask-cors

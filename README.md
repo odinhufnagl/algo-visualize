@@ -1,70 +1,7 @@
-# Getting Started with Create React App
+Write your own code inside the main functions and then run it to be able to see how it interacts with either the grid or graph. I would suggest you to try the algoritms I have already created to get a better understanding of how to use the project. These can be chosen in the dropdown next to the dropdown for language.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You are given functions as parameters which could be used to update the cells/nodes/edges with different states so that they change color.
 
-## Available Scripts
+You are also given how the grid/graph looks, so that you can check where there are walls and what the weights are. Though, remember that the graph/grid you are given in the parameters is a copy of the graph/grid and will not update when you update the graph/grid. So if you for example want to run a dijkstras and keep in store which nodes you have visited, you have to keep visited nodes in an array or dictionary for yourself. That also makes the coding flow more like how it often looks when you are creating a dijkstras. The only difference now is that when you are adding a node to your own "visited" list, you should also use a function from the parameters to update the node in the graphVisualizer.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The "add heightmap" accepts an image, preferably on a heightmap. What it does is it converts the image to grayscale, and than it will project the colorvalues as weights on the grid. Darker value means lower weight. This format suits heightmaps really good, because you could try your algoritms on a real life example of a mountain chain. In the repo there is an image you can test with.
