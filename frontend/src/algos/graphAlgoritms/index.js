@@ -63,6 +63,7 @@ export const graphAlgoritms = async (
   setOutputValue("");
 
   const params = { nodes, edges };
+  console.log("nodes here", nodes);
   const { output, isError } = await compileCode(
     languageObject.template.graph(mainCode),
     params,
