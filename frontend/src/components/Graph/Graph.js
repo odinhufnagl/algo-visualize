@@ -416,17 +416,10 @@ const Graph = ({
 
   const deleteNode = (name) => {
     const nodesCopy = copy(nodes);
-    const node = nodesCopy[name];
-    deleteEdges(node.connectedEdges);
-    delete nodesCopy[name];
-    setNodes(nodesCopy);
-  };
-
-  const deleteEdges = (edgesId) => {
     const edgesCopy = copy(edges);
-    const nodesCopy = copy(nodes);
+    const node = nodesCopy[name];
 
-    edgesId.forEach((edgeId) => {
+    node.connectedEdges.forEach((edgeId) => {
       const edge = edgesCopy[edgeId];
       nodesCopy[edge.from].connectedEdges = nodes[
         edge.from
@@ -434,8 +427,27 @@ const Graph = ({
       nodesCopy[edge.to].connectedEdges = nodes[edge.to].connectedEdges.filter(
         (connectedEdgeId) => connectedEdgeId !== edgeId
       );
+
       delete edgesCopy[edgeId];
     });
+    delete nodesCopy[name];
+    setNodes(nodesCopy);
+    setEdges(edgesCopy);
+  };
+
+  const deleteEdge = (edgeId) => {
+    const edgesCopy = copy(edges);
+    const nodesCopy = copy(nodes);
+    const edge = edgesCopy[edgeId];
+
+    nodesCopy[edge.from].connectedEdges = nodes[
+      edge.from
+    ].connectedEdges.filter((connectedEdgeId) => connectedEdgeId !== edgeId);
+    nodesCopy[edge.to].connectedEdges = nodes[edge.to].connectedEdges.filter(
+      (connectedEdgeId) => connectedEdgeId !== edgeId
+    );
+
+    delete edgesCopy[edgeId];
     setNodes(nodesCopy);
     setEdges(edgesCopy);
   };
@@ -457,7 +469,7 @@ const Graph = ({
       return;
     }
     if (isDeleting) {
-      deleteEdges([edgeId]);
+      deleteEdge(edgeId);
     }
   };
 

@@ -293,6 +293,10 @@ const MainScreen = () => {
     }
   }, [grid, startRestart, nodes, edges]);
 
+  useEffect(() => {
+    console.log("nodes updated", nodes);
+  }, [nodes]);
+
   const handleVisualize = async () => {
     setLoading(true);
     //here we run the code that the user has written. The functions below have the availiability to update the graph and grid, for example change the status of a node
