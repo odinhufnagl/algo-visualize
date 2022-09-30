@@ -1,3 +1,5 @@
+link: http://odin.hufnagl.se/
+
 Write your own code inside the main functions and then run it to be able to see how it interacts with either the grid or graph. I would suggest you to try the algoritms I have already created to get a better understanding of how to use the project. These can be chosen in the dropdown next to the dropdown for language.
 
 You are given functions as parameters which could be used to update the cells/nodes/edges with different states so that they change color.
