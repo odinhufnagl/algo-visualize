@@ -1,4 +1,5 @@
 link: http://odin.hufnagl.se/
+video: https://www.youtube.com/watch?v=lvp0x9oX1DU
 
 Write your own code inside the main functions and then run it to be able to see how it interacts with either the grid or graph. I would suggest you to try the algoritms I have already created to get a better understanding of how to use the project. These can be chosen in the dropdown next to the dropdown for language.
 
