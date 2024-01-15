@@ -12,22 +12,33 @@ const headers = {
   "content-type": "application/json",
   "Content-Type": "application/json",
   "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
-  "X-RapidAPI-Key": "84471de5fdmsh1782d389243083ap1af00bjsne39c996a1c6a",
+  "X-RapidAPI-Key": "6ac33dcf1dmsh4e10a5c608d2587p12611ajsna8b2a44d27b4",
 };
 
 const compileCode = async (code, input, languageId) => {
   try {
+    console.log("papap");
     let res = await fetch(URL_POST_SUBMISSION, {
       headers,
       method: "POST",
       body: JSON.stringify(body(code, input, languageId)),
     });
     res = await res.json();
-    res = await fetch(URL_GET_SUBMISSION(res.token), {
-      headers,
-      method: "GET",
-    });
-    res = await res.json();
+    console.log("lulul", res);
+    let inQueue = true;
+    let tries = 0;
+    while (inQueue && tries < 10) {
+      tries++;
+      res = await fetch(URL_GET_SUBMISSION(res.token), {
+        headers,
+        method: "GET",
+      });
+      res = await res.json();
+      if (res.status.id !== 1) {
+        inQueue = false;
+      }
+    }
+    console.log("lalla", res);
 
     return res.stderr
       ? { output: atob(res.stderr), isError: true }
