@@ -1,3 +1,6 @@
+EDIT 2024-01-15: At the moment, there are some updates being made so please check the video instead
+
+
 link: http://odin.hufnagl.se/
 
 video: https://www.youtube.com/watch?v=lvp0x9oX1DU
