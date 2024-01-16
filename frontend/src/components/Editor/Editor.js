@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import MonacoEditor, { loader } from "@monaco-editor/react";
-import React, { useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import { Button, Dropdown, Spacer } from "../../common";
 import { sleep } from "../../utils";
 
@@ -43,7 +43,7 @@ const Editor = ({
   //formats the code
   useEffect(() => {
     (async () => {
-      await sleep(10);
+      await sleep(1000);
       editorRef.current?.trigger("editor", "editor.action.formatDocument");
     })();
   }, [editor, template, language]);
@@ -140,4 +140,4 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default Editor;
+export default memo(Editor);
