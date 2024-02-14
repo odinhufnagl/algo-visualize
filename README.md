@@ -1,4 +1,4 @@
-link: http://odin.hufnagl.se/
+link: algo-visualize.vercel.app
 
 video: https://www.youtube.com/watch?v=lvp0x9oX1DU
 
