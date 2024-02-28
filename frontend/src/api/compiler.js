@@ -34,7 +34,7 @@ const compileCode = async (code, input, languageId) => {
         method: "GET",
       });
       res = await res.json();
-      if (res.status.id !== 1) {
+      if (res.status.id === 3) {
         inQueue = false;
       }
     }
